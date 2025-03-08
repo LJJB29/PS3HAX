@@ -63,6 +63,32 @@
         .btn:hover {
             background: #e040fb;
         }
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            display: none;
+            width: 300px;
+            text-align: center;
+        }
+        .popup h2 {
+            font-size: 1.5rem;
+            color: #ffcc00;
+        }
+        .popup p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .popup .btn {
+            background: #ff0000;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -87,5 +113,20 @@
         
         <a href="https://www.psx-place.com" target="_blank" class="btn">Visit PSX-Place</a>
     </div>
+    
+    <div class="popup" id="updatePopup">
+        <h2>Update 4.92 is Live!</h2>
+        <p>Please do not update as Hybrid firmware has not been made yet. This page will update when there is an HFW available.</p>
+        <button class="btn" onclick="closePopup()">Close</button>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            document.getElementById("updatePopup").style.display = "block";
+        };
+        function closePopup() {
+            document.getElementById("updatePopup").style.display = "none";
+        }
+    </script>
 </body>
 </html>
