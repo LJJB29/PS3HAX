@@ -14,7 +14,6 @@
             padding: 0;
             line-height: 1.6;
             overflow-x: hidden;
-            display: flex;
         }
         h1, h2 {
             color: #ffcc00;
@@ -29,6 +28,10 @@
             padding: 10px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
         }
         .top-bar .title {
             font-size: 1.5rem;
@@ -55,6 +58,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             text-align: left;
             flex-grow: 1;
+            margin-top: 80px; /* Push content down to make space for the fixed top bar */
         }
         .sidebar {
             width: 250px;
