@@ -46,12 +46,15 @@
         }
         .container {
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 0 auto;
             background: #1c1c1c;
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             text-align: left;
+            height: calc(100vh - 80px); /* Full height minus the top bar height */
+            overflow-y: auto;
+            box-sizing: border-box;
         }
         p {
             font-size: 1rem;
