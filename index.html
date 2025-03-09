@@ -58,35 +58,18 @@
             flex-grow: 1;
             margin-top: 80px;
         }
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #1c1c1c;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            display: none;
-            width: 350px;
-            text-align: center;
-            z-index: 10;
-        }
-        .popup h2 {
-            color: #ffcc00;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .popup .btn {
-            background: red;
-            color: white;
+        .btn {
+            background: #ffcc00;
+            color: black;
             padding: 10px 20px;
-            font-size: 1rem;
             border-radius: 5px;
-            margin-top: 20px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
         }
-        .popup .btn:hover {
-            background: #ff1a1a;
+        .btn:hover {
+            background: #e6b800;
         }
 
         @media (max-width: 768px) {
@@ -114,7 +97,8 @@
         <p>Update your PS3 to the latest Hybrid Firmware (HFW) by following these steps:</p>
 
         <h3>Step 1: Download the Latest HFW</h3>
-        <p>Visit trusted sources and download the latest HFW version for your PS3.</p>
+        <p>Click the button below to download the latest HFW (PS3UPDAT.PUP) for your PS3:</p>
+        <a href="https://www.mediafire.com/file/le9hjow2igkljzv/PS3UPDAT.PUP/file" download class="btn">Download HFW (PS3UPDAT.PUP)</a>
 
         <h3>Step 2: Prepare USB Drive</h3>
         <p>Format a USB drive to FAT32. Create a folder named <b>PS3</b>, then a folder inside it named <b>UPDATE</b>. Place the downloaded HFW file inside the UPDATE folder and rename it to <b>PS3UPDAT.PUP</b>.</p>
@@ -123,7 +107,19 @@
         <p>Insert the USB into your PS3. Go to <b>Settings > System Update > Update via Storage Media</b> and follow the on-screen instructions.</p>
 
         <h3>Step 4: Verify and Proceed with HEN Installation</h3>
-        <p>Check the system information to confirm the firmware version. If it's HFW, continue with the HEN installation.</p>
+        <p>Once the update is complete, check the system information to confirm the firmware version. If it's HFW, proceed with the HEN installation.</p>
+
+        <h2 id="hen">How to Install HEN</h2>
+        <p>After updating, follow these steps to install HEN:</p>
+
+        <h3>Step 1: Visit the HEN Exploit Page</h3>
+        <p>Go to the PS3Xploit website in your PS3's web browser: <a href="http://ps3xploit.me" target="_blank">http://ps3xploit.me</a></p>
+
+        <h3>Step 2: Select PS3HEN</h3>
+        <p>On the website, click on the <b>PS3HEN</b> option, then select the <b>HEN Auto Installer</b> from the options.</p>
+
+        <h3>Step 3: Follow the Instructions</h3>
+        <p>Follow the instructions on the website to automatically install HEN on your PS3. Once installed, you'll have access to homebrew and other mods!</p>
 
         <h2 id="step1">Step 1: Check Your PS3 Compatibility</h2>
         <p>Make sure your PS3 model supports HEN. This works with non-CFW models (Super Slim, Slim, and some FAT models).</p>
@@ -138,19 +134,4 @@
         <p>Open the PS3 browser and go to the HEN exploit page. Follow the instructions carefully to install.</p>
 
         <h2 id="step5">Step 5: Enable HEN</h2>
-        <p>After installation, navigate to the HEN enabler and activate it. Now you're all set to enjoy your modded PS3!</p>
-
-        <a href="https://www.psx-place.com" target="_blank" class="btn">Visit PSX-Place</a>
-    </div>
-
-    <div class="popup" id="updatePopup">
-        <h2>Update 4.92 is Live!</h2>
-        <p>Please do not update yet as Hybrid firmware hasn't been released. This page will notify you when HFW is available.</p>
-        <button class="btn" onclick="closePopup()">Close</button>
-    </div>
-
-    <script>
-        // No need to handle multiple languages anymore since there's only English.
-    </script>
-</body>
-</html>
+        <p>After installation, navigate to the HEN enabler and activate it. Now you
