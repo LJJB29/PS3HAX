@@ -131,8 +131,8 @@
 </head>
 <body>
     <div class="top-bar">
-        <div class="title">PS3HAX</div>
-        <select class="language-selector">
+        <div class="title" id="pageTitle">PS3HAX</div>
+        <select class="language-selector" onchange="changeLanguage(event)">
             <option value="en">English</option>
             <option value="es">Español</option>
             <option value="fr">Français</option>
@@ -141,52 +141,52 @@
     </div>
 
     <div class="container">
-        <h1>PS3HAX: The Easiest Way To Modify Your PS3 without installing CFW</h1>
-        <p>Unlock your PS3 with HEN and enjoy new features! Follow these steps to install the Homebrew Enabler (HEN) and get started.</p>
+        <h1 id="mainTitle">PS3HAX: The Easiest Way To Modify Your PS3 without installing CFW</h1>
+        <p id="introText">Unlock your PS3 with HEN and enjoy new features! Follow these steps to install the Homebrew Enabler (HEN) and get started.</p>
 
         <div class="card">
-            <h2>Step 1: Check Your PS3 Compatibility</h2>
-            <p>Make sure your PS3 model supports HEN. This works with non-CFW models (Super Slim, Slim, and some FAT models).</p>
+            <h2 id="step1Title">Step 1: Check Your PS3 Compatibility</h2>
+            <p id="step1Text">Make sure your PS3 model supports HEN. This works with non-CFW models (Super Slim, Slim, and some FAT models).</p>
         </div>
 
         <div class="card">
-            <h2>Step 2: Download Required Files</h2>
-            <p>Get the latest version of <a href="https://www.psx-place.com/threads/ps3hen-the-homebrew-enabler-for-ps3-superslim-slim-and-fat-consoles.23955/" target="_blank">PS3HEN</a> from trusted sources.</p>
+            <h2 id="step2Title">Step 2: Download Required Files</h2>
+            <p id="step2Text">Get the latest version of <a href="https://www.psx-place.com/threads/ps3hen-the-homebrew-enabler-for-ps3-superslim-slim-and-fat-consoles.23955/" target="_blank" id="psxLink">PS3HEN</a> from trusted sources.</p>
         </div>
 
         <div class="card">
-            <h2>Step 3: Prepare USB Drive</h2>
-            <p>Format your USB drive to FAT32 and place the required files in the root directory. Make sure it's clean and free of other files.</p>
+            <h2 id="step3Title">Step 3: Prepare USB Drive</h2>
+            <p id="step3Text">Format your USB drive to FAT32 and place the required files in the root directory. Make sure it's clean and free of other files.</p>
         </div>
 
         <div class="card">
-            <h2>Step 4: Run HEN Installer</h2>
-            <p>Open the PS3 browser and go to the HEN exploit page. Follow the instructions carefully to install.</p>
+            <h2 id="step4Title">Step 4: Run HEN Installer</h2>
+            <p id="step4Text">Open the PS3 browser and go to the HEN exploit page. Follow the instructions carefully to install.</p>
         </div>
 
         <div class="card">
-            <h2>Step 5: Enable HEN</h2>
-            <p>After installation, navigate to the HEN enabler and activate it. Now you're all set to enjoy your modded PS3!</p>
+            <h2 id="step5Title">Step 5: Enable HEN</h2>
+            <p id="step5Text">After installation, navigate to the HEN enabler and activate it. Now you're all set to enjoy your modded PS3!</p>
         </div>
 
         <div class="card">
-            <h2>How to Update to HFW</h2>
-            <p>Update your PS3 to the latest Hybrid Firmware (HFW) by following these steps:</p>
+            <h2 id="updateTitle">How to Update to HFW</h2>
+            <p id="updateText">Update your PS3 to the latest Hybrid Firmware (HFW) by following these steps:</p>
             
-            <h3>Step 1: Download the Latest HFW</h3>
-            <p>Visit trusted sources and download the latest HFW version for your PS3.</p>
+            <h3 id="updateStep1Title">Step 1: Download the Latest HFW</h3>
+            <p id="updateStep1Text">Visit trusted sources and download the latest HFW version for your PS3.</p>
 
-            <h3>Step 2: Prepare USB Drive</h3>
-            <p>Format a USB drive to FAT32. Create a folder named <b>PS3</b>, then a folder inside it named <b>UPDATE</b>. Place the downloaded HFW file inside the UPDATE folder and rename it to <b>PS3UPDAT.PUP</b>.</p>
+            <h3 id="updateStep2Title">Step 2: Prepare USB Drive</h3>
+            <p id="updateStep2Text">Format a USB drive to FAT32. Create a folder named <b>PS3</b>, then a folder inside it named <b>UPDATE</b>. Place the downloaded HFW file inside the UPDATE folder and rename it to <b>PS3UPDAT.PUP</b>.</p>
 
-            <h3>Step 3: Update via USB</h3>
-            <p>Insert the USB into your PS3. Go to <b>Settings > System Update > Update via Storage Media</b> and follow the on-screen instructions.</p>
+            <h3 id="updateStep3Title">Step 3: Update via USB</h3>
+            <p id="updateStep3Text">Insert the USB into your PS3. Go to <b>Settings > System Update > Update via Storage Media</b> and follow the on-screen instructions.</p>
 
-            <h3>Step 4: Verify and Proceed with HEN Installation</h3>
-            <p>Check the system information to confirm the firmware version. If it's HFW, continue with the HEN installation.</p>
+            <h3 id="updateStep4Title">Step 4: Verify and Proceed with HEN Installation</h3>
+            <p id="updateStep4Text">Check the system information to confirm the firmware version. If it's HFW, continue with the HEN installation.</p>
         </div>
 
-        <a href="https://www.psx-place.com" target="_blank" class="btn">Visit PSX-Place</a>
+        <a href="https://www.psx-place.com" target="_blank" class="btn" id="psxLinkBtn">Visit PSX-Place</a>
     </div>
 
     <div class="popup" id="updatePopup">
@@ -196,12 +196,66 @@
     </div>
 
     <script>
-        window.onload = function() {
-            document.getElementById("updatePopup").style.display = "block";
+        const translations = {
+            en: {
+                pageTitle: "PS3HAX",
+                mainTitle: "PS3HAX: The Easiest Way To Modify Your PS3 without installing CFW",
+                introText: "Unlock your PS3 with HEN and enjoy new features! Follow these steps to install the Homebrew Enabler (HEN) and get started.",
+                step1Title: "Step 1: Check Your PS3 Compatibility",
+                step1Text: "Make sure your PS3 model supports HEN. This works with non-CFW models (Super Slim, Slim, and some FAT models).",
+                step2Title: "Step 2: Download Required Files",
+                step2Text: "Get the latest version of PS3HEN from trusted sources.",
+                psxLink: "https://www.psx-place.com/threads/ps3hen-the-homebrew-enabler-for-ps3-superslim-slim-and-fat-consoles.23955/",
+                step3Title: "Step 3: Prepare USB Drive",
+                step3Text: "Format your USB drive to FAT32 and place the required files in the root directory. Make sure it's clean and free of other files.",
+                step4Title: "Step 4: Run HEN Installer",
+                step4Text: "Open the PS3 browser and go to the HEN exploit page. Follow the instructions carefully to install.",
+                step5Title: "Step 5: Enable HEN",
+                step5Text: "After installation, navigate to the HEN enabler and activate it. Now you're all set to enjoy your modded PS3!",
+                updateTitle: "How to Update to HFW",
+                updateText: "Update your PS3 to the latest Hybrid Firmware (HFW) by following these steps:",
+                updateStep1Title: "Step 1: Download the Latest HFW",
+                updateStep1Text: "Visit trusted sources and download the latest HFW version for your PS3.",
+                updateStep2Title: "Step 2: Prepare USB Drive",
+                updateStep2Text: "Format a USB drive to FAT32. Create a folder named PS3, then a folder inside it named UPDATE. Place the downloaded HFW file inside the UPDATE folder and rename it to PS3UPDAT.PUP.",
+                updateStep3Title: "Step 3: Update via USB",
+                updateStep3Text: "Insert the USB into your PS3. Go to Settings > System Update > Update via Storage Media and follow the on-screen instructions.",
+                updateStep4Title: "Step 4: Verify and Proceed with HEN Installation",
+                updateStep4Text: "Check the system information to confirm the firmware version. If it's HFW, continue with the HEN installation.",
+                psxLinkBtn: "Visit PSX-Place"
+            },
+            // Add other languages here...
         };
 
-        function closePopup() {
-            document.getElementById("updatePopup").style.display = "none";
+        function changeLanguage(event) {
+            const selectedLang = event.target.value;
+            const langData = translations[selectedLang];
+
+            document.getElementById("pageTitle").textContent = langData.pageTitle;
+            document.getElementById("mainTitle").textContent = langData.mainTitle;
+            document.getElementById("introText").textContent = langData.introText;
+            document.getElementById("step1Title").textContent = langData.step1Title;
+            document.getElementById("step1Text").textContent = langData.step1Text;
+            document.getElementById("step2Title").textContent = langData.step2Title;
+            document.getElementById("step2Text").textContent = langData.step2Text;
+            document.getElementById("psxLink").href = langData.psxLink;
+            document.getElementById("step3Title").textContent = langData.step3Title;
+            document.getElementById("step3Text").textContent = langData.step3Text;
+            document.getElementById("step4Title").textContent = langData.step4Title;
+            document.getElementById("step4Text").textContent = langData.step4Text;
+            document.getElementById("step5Title").textContent = langData.step5Title;
+            document.getElementById("step5Text").textContent = langData.step5Text;
+            document.getElementById("updateTitle").textContent = langData.updateTitle;
+            document.getElementById("updateText").textContent = langData.updateText;
+            document.getElementById("updateStep1Title").textContent = langData.updateStep1Title;
+            document.getElementById("updateStep1Text").textContent = langData.updateStep1Text;
+            document.getElementById("updateStep2Title").textContent = langData.updateStep2Title;
+            document.getElementById("updateStep2Text").textContent = langData.updateStep2Text;
+            document.getElementById("updateStep3Title").textContent = langData.updateStep3Title;
+            document.getElementById("updateStep3Text").textContent = langData.updateStep3Text;
+            document.getElementById("updateStep4Title").textContent = langData.updateStep4Title;
+            document.getElementById("updateStep4Text").textContent = langData.updateStep4Text;
+            document.getElementById("psxLinkBtn").textContent = langData.psxLinkBtn;
         }
     </script>
 </body>
